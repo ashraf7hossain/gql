@@ -1,0 +1,15 @@
+# etc/docker-compose.yml
+
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: etc/Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - ../.env
+    volumes:
+      - ../src:/app
